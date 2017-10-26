@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "materialize";
+
+ body {
+   background: url("https://scontent-dft4-3.xx.fbcdn.net/v/t31.0-8/17504980_10158522242170370_8847620269274051589_o.jpg?oh=4807dfeeee18bfb5125c5288a1f5f635&oe=5A6D00EE") no-repeat center center fixed;
+ }
+ .nav-wrapper {
+ 	background-color: #fcc43b;
+ }
+ .beer {
+   background-color: black;
+   color: white;
+   width: 80%;
+ }
+ .card.horizontal .card-image img {
+
+   max-width: 80%;
+ }
+ .search {
+   background-color: white;
+   opacity: .65;
+   color: black;
+ }
+
+ .brand-logo{
+   color: white;
+ }
+ .brand-logo {
+   font-family: 'Lobster', cursive;
+ }
+ .brand-logo h4 {
+   font-family: 'Raleway', sans-serif;
+   text-align: justify;
+ }
+ .hello{
+   background-color: rgba(254, 188, 6, 0.85);
+   text-align: center;
+   margin-top: 15%;
+   border: white 1px solid;
+ }
+ .profile {
+   margin: auto;
+   max-width: 80%;
+   background-color: white;
+   opacity: 0.75;
+   border-radius: 30px;
+   text-align: center;
+ }
+ .dude{
+   margin-left: 43%;
+   margin-right: 43%;
+ }
+ .sick {
+   color: blue;
+ }
+ .add{
+   margin-left: 40%;
+   margin-top: 10px;
+ }
+ .header {
+   max-width: 90%;
+   background-color: #fcc43b;
+   // opacity: 0.90;
+   border-radius: 50px;
+   text-align: center;
+   margin-left: 5%;
+   color: white;
+ }
