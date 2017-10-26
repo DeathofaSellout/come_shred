@@ -1,0 +1,13 @@
+<%= render "shared/nav" %>
+
+<div class="profile">
+  <h1>Hey <%= @user.first_name %> <%= @user.last_name %>!</h1>
+  <h3>Sports: <%= @user.sports %></h3>
+  <h3>Age: <%= @user.age %></h3>
+  <h3>Gender: <%= @user.gender %></h3>
+  <h3>Username: <%= @user.username %></h3>
+  <h3>Gender: <%= @user.gender %></h3>
+  <h3>Email: <%= @user.email %></h3>
+  <h3>Self Description: <%= @user.self_description %></h3>
+</div>
+<%= render "shared/edit_profile" %>

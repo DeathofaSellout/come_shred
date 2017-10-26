@@ -15,42 +15,19 @@
  */
  @import "materialize";
 
- body {
-   background: url("https://scontent-dft4-3.xx.fbcdn.net/v/t31.0-8/17504980_10158522242170370_8847620269274051589_o.jpg?oh=4807dfeeee18bfb5125c5288a1f5f635&oe=5A6D00EE") no-repeat center center fixed;
+ html {
+   background: url("https://www.revolution.co.za/wp-content/uploads/2015/02/Screen-shot-2015-02-13-at-10.41.00-AM.jpg") no-repeat center fixed;
+   background-size: cover;
  }
  .nav-wrapper {
- 	background-color: #fcc43b;
- }
- .beer {
-   background-color: black;
-   color: white;
-   width: 80%;
- }
- .card.horizontal .card-image img {
-
-   max-width: 80%;
- }
- .search {
-   background-color: white;
-   opacity: .65;
-   color: black;
- }
-
- .brand-logo{
-   color: white;
- }
- .brand-logo {
-   font-family: 'Lobster', cursive;
- }
- .brand-logo h4 {
-   font-family: 'Raleway', sans-serif;
-   text-align: justify;
+ 	background-color: black;
  }
  .hello{
-   background-color: rgba(254, 188, 6, 0.85);
+   background-color: black;
    text-align: center;
-   margin-top: 15%;
+   margin: 30%;
    border: white 1px solid;
+   color: white;
  }
  .profile {
    margin: auto;
@@ -64,16 +41,9 @@
    margin-left: 43%;
    margin-right: 43%;
  }
- .sick {
-   color: blue;
- }
- .add{
-   margin-left: 40%;
-   margin-top: 10px;
- }
  .header {
    max-width: 90%;
-   background-color: #fcc43b;
+   background-color: black;
    // opacity: 0.90;
    border-radius: 50px;
    text-align: center;

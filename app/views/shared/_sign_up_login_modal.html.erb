@@ -1,0 +1,92 @@
+<div id="modal_signup" class="modal modal-fixed-footer">
+  <%= form_for @user do |f| %>
+  <div class="modal-content">
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :first_name%>
+          <label for="first_name">Enter First Name</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :last_name%>
+          <label for="last_name">Enter Last Name</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :age%>
+        <label for="age">Age</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :username%>
+        <label for="username">Username</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :gender%>
+        <label for="gender">Gender</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :sports%>
+        <label for="sports">Sports</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :self_description%>
+        <label for="self_description">Self Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :email%>
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.password_field :password%>
+        <label for="password">Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+    <%= f.submit "Save", class: "btn-flat"%>
+  </div>
+  <%end%>
+</div>
+
+<div id="modal_login" class="modal modal-fixed-footer">
+  <% @user=User.new %>
+  <%= form_for @user, url: "/sessions", method: "post" do |f| %>
+  <div class="modal-content">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.email_field :email, placeholder: "Email" %>
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.password_field :password, placeholder: "Password" %>
+        <label for="password">Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+    <%= f.submit "Login", class: "btn-flat" %>
+  </div>
+  <% end %>
+</div>

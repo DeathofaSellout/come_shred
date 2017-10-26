@@ -1,6 +1,8 @@
-class UserController < ApplicationController
-  def new
+class UsersController < ApplicationController
+  def index
     @user = User.new
+  end
+  def show
   end
 
   def create
@@ -12,6 +14,13 @@ class UserController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
   end
+
+  def update
+    @user = User.find_by_id(session[:user_id])
+    @user.update_attributes(user_params)
+    redirect_to user_path(@user)
+  end
+
   private
 
   def user_params

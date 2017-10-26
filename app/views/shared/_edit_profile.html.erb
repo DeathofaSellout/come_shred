@@ -1,0 +1,65 @@
+<a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
+
+<div id="modal3" class="modal sick">
+  <div class="modal-content">
+    <%= form_for @user, :class=> "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :first_name %>
+        <%= f.label :first_name, :class=> "active" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :last_name %>
+        <%= f.label :last_name, :class=> "active" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+       <%= f.text_field :email %>
+       <%= f.label :email, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :password %>
+       <%= f.label :password, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :age %>
+       <%= f.label :age, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :gender %>
+       <%= f.label :gender, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :sports %>
+       <%= f.label :sports, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+      <%= f.text_field :username %>
+      <%= f.label :username, :class=> "active" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :self_description %>
+      <%= f.label :self_description, :class=> "active" %>
+    </div>
+  </div>
+    <div class="modal-footer">
+      <%= f.submit "submit", :class=> "btn-flat" %>
+    </div>
+    <% end %>
+  </div>
+</div>

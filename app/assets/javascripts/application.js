@@ -11,5 +11,16 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
+//= require jquery
 //= require_tree .
+
+//= require materialize-sprockets
+
+$(document).ready(function(){
+  // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+  $('.modal').modal();
+  console.log("$modal", $('.modal'))
+  //$(".button-collapse").sideNav()
+
+
+})
