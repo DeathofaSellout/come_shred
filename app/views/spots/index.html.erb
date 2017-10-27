@@ -1,0 +1,54 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyAm964yyyosiM7D8eu35oND6EbEor8x5fM"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
+<%= render "shared/nav" %>
+<div>
+  <h1>Spots to Shred<h1>
+  <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Add a Spot</a>
+
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Features</th>
+        <th>Comments</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= content_tag_for(:tr, @spots) do |spot| %>
+        <td><%= spot.latitude %></td>
+        <td><%= spot.longitude %></td>
+        <td><%= spot.name %></td>
+        <td><%= spot.address %></td>
+        <td><%= spot.features %></td>
+        <td><%= spot.comments %></td>
+        <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
+        <td><%= link_to 'Destory', spot, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<!-- <div>
+  <iframe width="300" height="300" frameborder="0" style="border:0"
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSSTBGymfsr3gNn4q4CnbWNALwONs-wSI&q&callback=initMap"
+   allowfullscreen>
+  </iframe>
+</div> -->
+<!-- https://maps.googleapis.com/maps/api/js?key=AIzaSyDSSTBGymfsr3gNn4q4CnbWNALwONs-wSI&q&callback=initMap -->
+<div style='width: 800px;'>
+  <div id='map' style='width: 800px; height: 400px;'></div>
+</div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json%>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>

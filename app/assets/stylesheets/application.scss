@@ -15,19 +15,18 @@
  */
  @import "materialize";
 
- html {
+.index {
    background: url("https://www.revolution.co.za/wp-content/uploads/2015/02/Screen-shot-2015-02-13-at-10.41.00-AM.jpg") no-repeat center fixed;
    background-size: cover;
  }
+body {
+  background-color: #F5F5F5;
+ }
+ #map{
+   margin: 25%;
+ }
  .nav-wrapper {
  	background-color: black;
- }
- .hello{
-   background-color: black;
-   text-align: center;
-   margin: 30%;
-   border: white 1px solid;
-   color: white;
  }
  .profile {
    margin: auto;
@@ -44,7 +43,7 @@
  .header {
    max-width: 90%;
    background-color: black;
-   // opacity: 0.90;
+   opacity: 0.90;
    border-radius: 50px;
    text-align: center;
    margin-left: 5%;

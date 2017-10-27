@@ -1,10 +1,14 @@
 <nav>
   <div class="nav-wrapper">
-
     <a href="/" class="brand-logo left">ComeShred</a>
-
     <ul id="nav-mobile" class="right">
-      <li><%= link_to "Log Out", logout_path, class: "btn-flat" %></li>
+      <%if current_page?("/spots")%>
+        <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
+      <%else%>
+        <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
+        <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
+      <%end%>
+      <li><%= link_to "Log Out", logout_path, class: "btn waves-effect waves-light" %></li>
     </ul>
   </div>
 </nav>

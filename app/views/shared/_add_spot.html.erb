@@ -1,0 +1,56 @@
+<div id="modal_signup" class="modal modal-fixed-footer">
+  <%= form_for @spot do |f| %>
+  <div class="modal-content">
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :latitude%>
+          <label for="latitude">Enter Latitude</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :longitude%>
+          <label for="longitude">Enter Longitude</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :address%>
+        <label for="address">Adress</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :name%>
+        <label for="name">Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :features%>
+        <label for="features">Features</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :comments%>
+        <label for="comments">Comments</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :rating%>
+        <label for="rating">Rating</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+    <%= f.submit "Save", class: "btn-flat"%>
+  </div>
+  <%end%>
+</div>

@@ -13,8 +13,9 @@
 //= require rails-ujs
 //= require jquery
 //= require_tree .
-
 //= require materialize-sprockets
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function(){
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
