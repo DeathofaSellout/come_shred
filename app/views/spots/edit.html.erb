@@ -1,0 +1,55 @@
+<div id="modal3" class="modal sick">
+  <div class="modal-content">
+    <%= form_for @spot, :class=> "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :name %>
+        <%= f.label :name, :class=> "active" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :address %>
+        <%= f.label :address, :class=> "active" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+       <%= f.text_field :longitude %>
+       <%= f.label :longitude, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :latitude %>
+       <%= f.label :latitude, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :features %>
+       <%= f.label :features, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :comments %>
+       <%= f.label :comments, :class=> "active" %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.text_field :rating %>
+       <%= f.label :rating, :class=> "active" %>
+     </div>
+   </div>
+  </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+      <%= f.submit "submit", :class=> "btn-flat" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'Show', @spot %> |
+<%= link_to 'Back', spots_path %>

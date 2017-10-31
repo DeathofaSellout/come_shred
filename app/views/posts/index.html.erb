@@ -1,0 +1,36 @@
+<%= render "shared/nav" %>
+<p id="notice"><%= notice %></p>
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Main</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.main %></td>
+        <% post.post_comments.each do |comment|%>
+          <td>
+             <%= comment.comment%>
+          </td>
+        <% end %>
+        <td>
+          <%= render :partial => "post_comments/comment_form", :locals => {:post_id => post.id }%>
+          <a class="waves-effect waves-light btn modal-trigger dude" href="#modal_add_comment">Add Comment</a>
+        </td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

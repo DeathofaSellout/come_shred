@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
+  before_action :is_current_user, only: [:show]
+
   def index
     @user = User.new
-  end
-  def show
   end
 
   def create
@@ -22,6 +22,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def is_current_user
+    if current_user.id.to_s != params[:id]
+      redirect_to user_path(current_user)
+    end
+
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :gender, :sports, :self_description, :age, :username)

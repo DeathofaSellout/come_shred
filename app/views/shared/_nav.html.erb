@@ -4,9 +4,13 @@
     <ul id="nav-mobile" class="right">
       <%if current_page?("/spots")%>
         <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
-      <%else%>
+        <li><%= link_to "Posts", posts_path, class: "btn waves-effect waves-light" %></li>
+      <%elsif current_page?("/posts")%>
+        <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
         <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
-        <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
+      <%else%>
+        <li><%= link_to "Posts", posts_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
       <%end%>
       <li><%= link_to "Log Out", logout_path, class: "btn waves-effect waves-light" %></li>
     </ul>

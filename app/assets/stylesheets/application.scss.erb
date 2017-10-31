@@ -15,12 +15,15 @@
  */
  @import "materialize";
 
-.index {
-   background: url("https://www.revolution.co.za/wp-content/uploads/2015/02/Screen-shot-2015-02-13-at-10.41.00-AM.jpg") no-repeat center fixed;
+#skatepic {
+   background: url(<%=image_url("skateboard2.jpg")%>)no-repeat center fixed;
    background-size: cover;
  }
 body {
   background-color: #F5F5F5;
+ }
+ .btn {
+   margin-top: 100px;
  }
  #map{
    margin: 25%;
@@ -30,7 +33,9 @@ body {
  }
  .profile {
    margin: auto;
-   max-width: 80%;
+   padding: 5px;
+   max-width: 40%;
+   margin-left: 5%;
    background-color: white;
    opacity: 0.75;
    border-radius: 30px;
@@ -48,4 +53,13 @@ body {
    text-align: center;
    margin-left: 5%;
    color: white;
+ }
+ .hello{
+   background-color: black;
+   text-align: center;
+   margin: 35%;
+   border: white 1px solid;
+   color: white;
+   opacity: 90%;
+   border-radius: 30px;
  }

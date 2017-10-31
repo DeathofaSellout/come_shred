@@ -1,0 +1,19 @@
+<div id="modal_add_comment" class="modal modal-fixed-footer">
+  <%= form_for @post_comment do |f| %>
+    <div class="modal-content">
+      <div class="row">
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.text_field :comment%>
+            <%= f.hidden_field :post_id, :value => post_id %>
+            <label for="comment">Enter Comment</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+      <%= f.submit "Save", class: "btn-flat" %>
+    </div>
+  <%end%>
+</div>
