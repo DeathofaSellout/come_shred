@@ -23,5 +23,5 @@ $(document).ready(function(){
   console.log("$modal", $('.modal'))
   //$(".button-collapse").sideNav()
 
-
+  $("select").material_select();
 })

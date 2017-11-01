@@ -1,0 +1,23 @@
+<h1> <%= @conversation.subject %> </h1>
+
+<h4> Participants </h4>
+<% @conversation.participants.each do |participant|%>
+  <div> <%= participant.username %> </div>
+<% end %>
+
+<hr />
+<% @conversation.receipts_for(current_user).each do |receipt|%>
+  <div>
+    <div> <%= receipt.message.sender.username %> commented: </div>
+    <%= simple_format receipt.message.body %>
+  </div>
+
+  <hr />
+<% end %>
+
+<%= form_for @message, url: conversation_messages_path(@conversation) do |f| %>
+  <div>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit %>
+<% end %>

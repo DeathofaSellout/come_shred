@@ -5,12 +5,19 @@
       <%if current_page?("/spots")%>
         <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
         <li><%= link_to "Posts", posts_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Conversations", conversations_path, class: "btn waves-effect waves-light" %></li>
       <%elsif current_page?("/posts")%>
         <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
         <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Conversations", conversations_path, class: "btn waves-effect waves-light" %></li>
+      <%elsif current_page?("/conversations")%>
+        <li><%= link_to "Profile Page", user_path(current_user[:id]), class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Posts", posts_path, class: "btn waves-effect waves-light" %></li>
       <%else%>
         <li><%= link_to "Posts", posts_path, class: "btn waves-effect waves-light" %></li>
         <li><%= link_to "Spots", spots_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "Conversations", conversations_path, class: "btn waves-effect waves-light" %></li>
       <%end%>
       <li><%= link_to "Log Out", logout_path, class: "btn waves-effect waves-light" %></li>
     </ul>
