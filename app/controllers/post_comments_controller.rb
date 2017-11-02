@@ -24,7 +24,10 @@ class PostCommentsController < ApplicationController
   # POST /post_comments
   # POST /post_comments.json
   def create
-    @post_comment = PostComment.create(post_comment_params)
+    @post_comment = PostComment.new(post_comment_params)
+    @post_comment.user = current_user
+    @post_comment.user_id = current_user.id
+    @post_comment.save
     redirect_to posts_path
 
     # respond_to do |format|
@@ -37,6 +40,7 @@ class PostCommentsController < ApplicationController
     #   end
     # end
   end
+
 
   # PATCH/PUT /post_comments/1
   # PATCH/PUT /post_comments/1.json
@@ -60,6 +64,7 @@ class PostCommentsController < ApplicationController
     #   format.html { redirect_to post_comments_url, notice: 'Post comment was successfully destroyed.' }
     #   format.json { head :no_content }
     # end
+    # redirect_to post_comments_url
     redirect_to posts_path
   end
 
@@ -71,6 +76,6 @@ class PostCommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_comment_params
-      params.require(:post_comment).permit(:comment, :post_id)
+      params.require(:post_comment).permit(:comment, :post_id, :user_id)
     end
 end

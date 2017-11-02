@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031231912) do
+ActiveRecord::Schema.define(version: 20171102202700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,12 +81,14 @@ ActiveRecord::Schema.define(version: 20171031231912) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "post_id"
+    t.integer "user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "main"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 20171031231912) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "self_description"
+    t.string "image"
   end
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"

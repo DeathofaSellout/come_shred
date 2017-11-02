@@ -55,6 +55,11 @@
       <%= f.label :self_description, :class=> "active" %>
     </div>
   </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :image, placeholder: "Image Url"%>
+    </div>
+  </div>
     <div class="modal-footer">
       <a class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
       <%= f.submit "submit", :class=> "btn-flat" %>

@@ -1,13 +1,20 @@
 <%= render "shared/nav" %>
 
 <div class="profile">
-  <h1>Hey <%= @user.first_name %> <%= @user.last_name %>!</h1>
-  <h3>Sports: <%= @user.sports %></h3>
-  <h3>Age: <%= @user.age %></h3>
-  <h3>Gender: <%= @user.gender %></h3>
-  <h3>Username: <%= @user.username %></h3>
-  <h3>Email: <%= @user.email %></h3>
-  <h3>Self Description: <%= @user.self_description %></h3>
+  <div class= "profile_img">
+    <%= if @user.image == nil
+      image_tag('http://weclipart.com/gimg/DE3DE279C8E11C7C/dc6o8deoi.jpeg')
+    else
+      image_tag(@user.image)
+    end %>
+  </div>
+  <h2>Hey <%= @user.first_name %> <%= @user.last_name %>!</h2>
+  <h4>Sports: <%= @user.sports %></h4>
+  <h4>Age: <%= @user.age %></h4>
+  <h4>Gender: <%= @user.gender %></h4>
+  <h4>Username: <%= @user.username %></h4>
+  <h4>Email: <%= @user.email %></h4>
+  <h4>Self Description: <%= @user.self_description %></h4>
   <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
 </div>
 

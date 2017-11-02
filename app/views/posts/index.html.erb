@@ -1,3 +1,4 @@
+
 <%= render "shared/nav" %>
 <p id="notice"><%= notice %></p>
 
@@ -14,6 +15,7 @@
   <% @posts.each do |post| %>
     <div class="post">
       <h4><%= post.main %></h4>
+      Post by: <%= post.user.username %>
     </div>
     <div class="post_buttons">
       <%= link_to 'Edit', edit_post_path(post) %>
@@ -22,7 +24,8 @@
     <hr />
       <% post.post_comments.each do |comment|%>
         <div class="comment">
-           Comment: <%= comment.comment%>
+           <h6>Comment: <%= comment.comment %></h6>
+           Comment by: <%= comment.user.username %>
         </div>
         <div class="post_buttons">
           <%= link_to 'Edit', edit_post_comment_path(comment) %>
