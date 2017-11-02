@@ -60,7 +60,7 @@ class PostCommentsController < ApplicationController
     #   format.html { redirect_to post_comments_url, notice: 'Post comment was successfully destroyed.' }
     #   format.json { head :no_content }
     # end
-    redirect_to post_comments_url
+    redirect_to posts_path
   end
 
   private

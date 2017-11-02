@@ -16,7 +16,6 @@
       <h4><%= post.main %></h4>
     </div>
     <div class="post_buttons">
-      <!-- <%= link_to 'Show', post %> -->
       <%= link_to 'Edit', edit_post_path(post) %>
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
@@ -24,15 +23,14 @@
       <% post.post_comments.each do |comment|%>
         <div class="comment">
            Comment: <%= comment.comment%>
-         </div>
-         <div class="post_buttons">
-           <%= link_to 'Edit', edit_post_comment_path(comment) %>
-           <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-         </div>
+        </div>
+        <div class="post_buttons">
+          <%= link_to 'Edit', edit_post_comment_path(comment) %>
+          <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       <% end %>
-
       <%= render :partial => "post_comments/comment_form", :locals => {:post_id => post.id }%>
-      <a class="waves-effect waves-light btn modal-trigger dude" href="#modal_add_comment">Comment</a>
+      <a class="waves-effect waves-light btn modal-trigger dude" href="#modal_add_comment_<%= post.id %>">Comment</a>
     <hr />
   <% end %>
 </div>
