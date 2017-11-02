@@ -22,6 +22,19 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def edit
+    @user = User.find_by_id(params[:user_id])
+    # if current_user.id != @post.user_id
+    #   redirect_to post_path(@post)
+    # end
+  end
+
+  def destroy
+    user = User.find_by_id(params[:user_id])
+    user.destroy
+    redirect_to root_url
+  end
+
   private
 
   def is_current_user

@@ -10,34 +10,47 @@
   <h3>Self Description: <%= @user.self_description %></h3>
   <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
 </div>
+
+
 <%= render "shared/edit_profile" %>
 
-<% for user in @users %>
-  <div class="user">
-    <p>
-      <strong><%=h user.username %></strong>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
-      <div class="clear"></div>
-    </p>
-  </div>
-<% end %>
-
-<p>Username: <%=h @user.username %></p>
-<p><%= link_to "Find Friends", users_path %></p>
-
-<h2>Your Friends</h2>
-<ul>
-  <% for friendship in @user.friendships %>
-  <li>
-    <%= h friendship.friend.username %>
-    (<%= link_to "remove", friendship, :method => :delete %>)
-  </li>
+<div class="profile">
+  <% for user in @users %>
+    <div class="user">
+      <p>
+        <strong><%=h user.username %></strong>
+        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+        <div class="clear"></div>
+      </p>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<h2>Users Who Have Befriended You</h2>
-<ul>
-  <% for user in @user.inverse_friends %>
-  <li><%= h user.username %></li>
-  <% end %>
-</ul>
+<div class="profile">
+  <p>Username: <%=h @user.username %></p>
+  <p><%= link_to "Find Friends", users_path %></p>
+</div>
+
+<div class="profile">
+  <h2>Your Friends</h2>
+  <ul>
+    <% for friendship in @user.friendships %>
+    <li>
+      <%= h friendship.friend.username %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="profile">
+  <h2>Users Who Have Befriended You</h2>
+  <ul>
+    <% for user in @user.inverse_friends %>
+    <li><%= h user.username %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="profiletwo">
+  <%= link_to "Delete Profile", destroy_path(@user), data: {:confirm => "Are you sure you want to delete your profile?"}, :method => :delete %>
+</div>

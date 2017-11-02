@@ -1,12 +1,18 @@
-<h1>New Conversations</h1>
+<%= render "shared/nav" %>
+<h1>New Conversation</h1>
 
 <%= form_tag conversations_path, method: :post do %>
-  <div class="input-field col s12">
-    <%= select_tag :user_ids, options_from_collection_for_select(@recipients, :id, :username), multiple: true %>
-    <label>Select which Users to Message</label>
+  <div class="message">
+    <div class="input-field col s12">
+      <%= select_tag :user_ids, options_from_collection_for_select(@recipients, :id, :username), multiple: true %>
+      <label>Select which Users to Message</label>
+    </div>
   </div>
-  <p><%= text_field_tag :subject, nil, placeholder: "Subject" %></p>
-  <p><%= text_area_tag :body, nil, placeholder: "Leave a comment" %></p>
-
-  <%= submit_tag %>
+  <div class="message">
+    <p><%= text_field_tag :subject, nil, placeholder: "Subject" %></p>
+  </div>
+  <div class="message">
+    <p><%= text_area_tag :body, nil, placeholder: "Leave a comment" %></p>
+    <%= submit_tag %>
+  </div>
 <% end %>

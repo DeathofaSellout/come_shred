@@ -1,17 +1,24 @@
 <%= render "shared/nav" %>
-<h1>Conversations</h1>
-<%= link_to "New Conversation", new_conversation_path %>
-<hr />
-Inbox (<%= current_user.mailbox.inbox.unread(current_user).count %>) |
-All Conversations (<%= current_user.mailbox.conversations.count %>) |
-Sent (<%= current_user.mailbox.sentbox.count %>) |
-Trash (<%= current_user.mailbox.trash.count %>)
-<hr />
+<div class="profiletwo">
+  <%= link_to "New Message", new_conversation_path %>
+</div>
 
-Total: (<%= @conversations.count %>)
-
+<div class="post_header">
+  <h1>Your Messages</h1>
+</div>
+<hr />
+<div class="message">
+  Inbox (<%= current_user.mailbox.inbox.unread(current_user).count %>) |
+  All Messages (<%= current_user.mailbox.conversations.count %>) |
+  Sent (<%= current_user.mailbox.sentbox.count %>) |
+  Trash (<%= current_user.mailbox.trash.count %>)
+</div>
+<hr />
+<div class="message">
+  Total: (<%= @conversations.count %>)
+</div>
 <% @conversations.each do |conversation| %>
-  <div>
+  <div class="message">
     <% if conversation.is_unread?(current_user) %>
       <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong>
     <% else %>

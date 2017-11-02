@@ -1,23 +1,28 @@
+<%= render "shared/nav" %>
 <h1> <%= @conversation.subject %> </h1>
 
-<h4> Participants </h4>
-<% @conversation.participants.each do |participant|%>
-  <div> <%= participant.username %> </div>
-<% end %>
+<div class="message">
+  <h4> Participants: </h4>
+  <% @conversation.participants.each do |participant|%>
+    <div> <%= participant.username %> </div>
+  <% end %>
+</div>
 
-<hr />
-<% @conversation.receipts_for(current_user).each do |receipt|%>
-  <div>
-    <div> <%= receipt.message.sender.username %> commented: </div>
-    <%= simple_format receipt.message.body %>
-  </div>
+<div class="message">
+  <% @conversation.receipts_for(current_user).each do |receipt|%>
+    <div>
+      <div> <%= receipt.message.sender.username %> commented: </div>
+      <%= simple_format receipt.message.body %>
+    </div>
+  <% end %>
+</div>
 
-  <hr />
-<% end %>
-
-<%= form_for @message, url: conversation_messages_path(@conversation) do |f| %>
-  <div>
-    <%= f.text_area :body %>
-  </div>
-  <%= f.submit %>
-<% end %>
+<div class="message">
+  <%= form_for @message, url: conversation_messages_path(@conversation) do |f| %>
+    Enter Comment:
+    <div>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
