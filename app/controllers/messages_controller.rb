@@ -5,6 +5,11 @@ class MessagesController < ApplicationController
     receipt = current_user.reply_to_conversation(@conversation, params[:body])
     redirect_to conversation_path(receipt.conversation)
   end
+  def destroy
+    @conversation = current_user.mailbox.conversations.find(params[:id])
+    @conversation.destroy
+    redirect_to root_url
+  end
 
   private
 

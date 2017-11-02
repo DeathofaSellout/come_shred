@@ -33,6 +33,12 @@ class ConversationsController < ApplicationController
     recipients = User.where(id: params[:user_ids])
     receipt   = current_user.send_message(recipients, params[:body], params[:subject])
     redirect_to conversation_path(receipt.conversation)
+    #redirect_to inbox_conversations_path
   end
 
+  def destroy
+    @conversation = current_user.mailbox.conversations.find(params[:id])
+    @conversation.destroy
+    redirect_to conversations_path
+  end
 end

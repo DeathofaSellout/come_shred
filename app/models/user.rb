@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   acts_as_messageable
+  before_destroy { messages.destroy_all }
 
   has_many :spots
   has_secure_password

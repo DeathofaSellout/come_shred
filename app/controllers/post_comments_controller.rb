@@ -41,15 +41,15 @@ class PostCommentsController < ApplicationController
   # PATCH/PUT /post_comments/1
   # PATCH/PUT /post_comments/1.json
   def update
-    # respond_to do |format|
-    #   if @post_comment.update(post_comment_params)
-    #     format.html { redirect_to @post_comment, notice: 'Post comment was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @post_comment }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @post_comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+      if @post_comment.update(post_comment_params)
+        format.html { redirect_to @post_comment, notice: 'Post comment was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post_comment }
+      else
+        format.html { render :edit }
+        format.json { render json: @post_comment.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /post_comments/1
@@ -60,6 +60,7 @@ class PostCommentsController < ApplicationController
     #   format.html { redirect_to post_comments_url, notice: 'Post comment was successfully destroyed.' }
     #   format.json { head :no_content }
     # end
+    redirect_to post_comments_url
   end
 
   private

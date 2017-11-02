@@ -24,5 +24,6 @@
     <% else %>
       <%= link_to conversation.subject, conversation_path(conversation) %>
     <% end %>
+    <%= link_to 'Destroy', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <%end%>
