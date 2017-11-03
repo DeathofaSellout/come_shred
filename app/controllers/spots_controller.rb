@@ -50,7 +50,7 @@ class SpotsController < ApplicationController
 
     respond_to do |format|
       if @spot.update(spot_params)
-        format.html{ redirect_to @spot, notice: 'Your Spot was successfully added!'}
+        format.html{ redirect_to @spot}
         format.json{ render :show, status: :ok, location: @spot}
       else
         format.html{ render :new}

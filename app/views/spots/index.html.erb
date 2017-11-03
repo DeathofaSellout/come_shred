@@ -32,7 +32,7 @@
         <%= render :partial => "spots/edit", :locals => {:spot_id => spot.id }%>
         <td><a class="waves-effect waves-light btn modal-trigger dude" href="#modal_edit_spot_<%= spot.id %>">Edit</a></td>
         <td><div class="profilethree">
-          <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'} %>
+        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'} %></td>
         </div></td>
       <% end %>
     </tbody>
