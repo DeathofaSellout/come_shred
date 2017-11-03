@@ -22,6 +22,7 @@
 <%= render "shared/edit_profile" %>
 
 <div class="profile">
+  <h5>Friends To Add!</h5>
   <% for user in @users %>
     <div class="user">
       <p>
@@ -33,13 +34,13 @@
   <% end %>
 </div>
 
-<div class="profile">
+<!-- <div class="profile">
   <p>Username: <%=h @user.username %></p>
   <p><%= link_to "Find Friends", users_path %></p>
-</div>
+</div> -->
 
 <div class="profile">
-  <h6>Your Friends</h6>
+  <h5>Your Friends</h5>
   <ul>
     <% for friendship in @user.friendships %>
     <li>
@@ -51,7 +52,7 @@
 </div>
 
 <div class="profile">
-  <h6>Users Who Have Befriended You</h6>
+  <h5>Users Who Have Befriended You</h5>
   <ul>
     <% for user in @user.inverse_friends %>
     <li><%= h user.username %></li>
