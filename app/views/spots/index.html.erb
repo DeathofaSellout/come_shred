@@ -5,7 +5,7 @@
 
 <div>
   <h1>Spots to Shred<h1>
-    <%= render "shared/add_spot" %>
+  <%= render "shared/add_spot" %>
   <a class="waves-effect waves-light btn modal-trigger dude" href="#modal_add">Add a Spot</a>
 </div>
 <div class="table-responsive">
@@ -29,16 +29,17 @@
         <td><%= spot.address %></td>
         <td><%= spot.features %></td>
         <td><%= spot.comments %></td>
-        <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
-        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <%= render :partial => "spots/edit", :locals => {:spot_id => spot.id }%>
+        <td><a class="waves-effect waves-light btn modal-trigger dude" href="#modal_edit_spot_<%= spot.id %>">Edit</a></td>
+        <td><div class="profilethree">
+          <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'} %>
+        </div></td>
       <% end %>
     </tbody>
   </table>
 </div>
 
-<div style='width: 800px;'>
-  <div id='map' style='width: 1000px; height: 600px;'></div>
-</div>
+<div id='map' style='width: 2000px; height: 600px;'></div>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){

@@ -1,6 +1,7 @@
-<div id="modal3" class="modal sick">
+<div id="modal_edit_spot_<%=spot_id%>" class="modal sick">
+  <%= form_for @spot, :class=> "col s12" do |f| %>
+  <%= f.hidden_field :spot_id, :value => spot_id %>
   <div class="modal-content">
-    <%= form_for @spot, :class=> "col s12" do |f| %>
     <div class="row">
       <div class="input-field col s12">
         <%= f.text_field :name %>
@@ -51,5 +52,3 @@
     <% end %>
   </div>
 </div>
-<%= link_to 'Show', @spot %> |
-<%= link_to 'Back', spots_path %>

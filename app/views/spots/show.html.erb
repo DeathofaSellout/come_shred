@@ -1,3 +1,4 @@
+<%= render "shared/nav" %>
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Latitude:</strong>
@@ -14,6 +15,14 @@
 <p>
   <strong>Description:</strong>
   <%= @spot.name %>
+</p>
+<p>
+  <strong>Features:</strong>
+  <%= @spot.features %>
+</p>
+<p>
+  <strong>Comments:</strong>
+  <%= @spot.comments %>
 </p>
 
 <%= link_to 'Edit', edit_spot_path(@spot) %> |
