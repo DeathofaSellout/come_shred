@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user
       login(@user)
-      flash[:success] = "Successfully logged in."
+      #flash[:success] = "Successfully logged in."
       redirect_to @user
     else
       flash[:error] = "Incorrect email or password."
