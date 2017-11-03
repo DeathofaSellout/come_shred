@@ -8,13 +8,13 @@
       image_tag(@user.image)
     end %>
   </div>
-  <h2>Hey <%= @user.first_name %> <%= @user.last_name %>!</h2>
-  <h4>Sports: <%= @user.sports %></h4>
-  <h4>Age: <%= @user.age %></h4>
-  <h4>Gender: <%= @user.gender %></h4>
-  <h4>Username: <%= @user.username %></h4>
-  <h4>Email: <%= @user.email %></h4>
-  <h4>Self Description: <%= @user.self_description %></h4>
+  <h4>Hey <%= @user.first_name %> <%= @user.last_name %>!</h4>
+  <h6>Sports: <%= @user.sports %></h6>
+  <h6>Age: <%= @user.age %></h6>
+  <h6>Gender: <%= @user.gender %></h6>
+  <h6>Username: <%= @user.username %></h6>
+  <h6>Email: <%= @user.email %></h6>
+  <h6>Self Description: <%= @user.self_description %></h6>
   <a class="waves-effect waves-light btn modal-trigger dude" href="#modal3">Edit Profile</a>
 </div>
 
@@ -39,7 +39,7 @@
 </div>
 
 <div class="profile">
-  <h2>Your Friends</h2>
+  <h6>Your Friends</h6>
   <ul>
     <% for friendship in @user.friendships %>
     <li>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="profile">
-  <h2>Users Who Have Befriended You</h2>
+  <h6>Users Who Have Befriended You</h6>
   <ul>
     <% for user in @user.inverse_friends %>
     <li><%= h user.username %></li>

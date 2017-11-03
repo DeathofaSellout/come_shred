@@ -7,8 +7,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    if @user
+      login(@user)
+      flash[:success] = "Successfully logged in."
+      redirect_to @user
+    else
+      flash[:error] = "Incorrect email or password."
+      redirect_to root_path
+    end
   end
 
   def show

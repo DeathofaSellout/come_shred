@@ -29,16 +29,6 @@ class PostCommentsController < ApplicationController
     @post_comment.user_id = current_user.id
     @post_comment.save
     redirect_to posts_path
-
-    # respond_to do |format|
-    #   if @post_comment.save
-    #     format.html { redirect_to @post_comment, notice: 'Post comment was successfully created.' }
-    #     format.json { render :show, status: :created, location: @post_comment }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @post_comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
 
@@ -60,11 +50,6 @@ class PostCommentsController < ApplicationController
   # DELETE /post_comments/1.json
   def destroy
     @post_comment.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to post_comments_url, notice: 'Post comment was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
-    # redirect_to post_comments_url
     redirect_to posts_path
   end
 
