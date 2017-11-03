@@ -34,7 +34,7 @@ class SpotsController < ApplicationController
 
     respond_to do |format|
       if @spot.save
-        format.html{ redirect_to @spot, notice: 'Your Spot was successfully added!'}
+        format.html{ redirect_to @spot}
         format.json{ render :show, status: :created, location: @spot}
       else
         format.html{ render :new}
