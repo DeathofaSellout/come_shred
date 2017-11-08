@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user
       login(@user)
-      #flash[:success] = "Successfully logged in."
+      flash[:success] = "Successfully logged in."
       redirect_to @user
     else
       flash[:error] = "Incorrect email or password."
@@ -30,9 +30,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:user_id])
-    # if current_user.id != @post.user_id
-    #   redirect_to post_path(@post)
-    # end
+    if current_user.id != @post.user_id
+      redirect_to post_path(@post)
+    end
   end
 
   def destroy
