@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully logged in."
       redirect_to @user
     else
-      flash[:error] = "Incorrect email or password."
+      console.log(:error)
+      flash[:error] = "Incorrect information, please follow directions more closely."
       redirect_to root_path
     end
   end
