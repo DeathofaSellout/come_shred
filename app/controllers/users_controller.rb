@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully logged in."
       redirect_to @user
     else
-      flash[:error] = "Incorrect information, please follow directions more closely."
+      flash[:error] = "Incorrect information. Follow directions more closely."
       redirect_to root_path
     end
   end
