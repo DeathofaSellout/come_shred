@@ -27,7 +27,7 @@
            Comment by: <%= comment.user.username %>
         </div>
         <div class="post_buttons">
-          <%= link_to 'Edit', edit_post_comment_path(comment) %>
+          <!-- <%= link_to 'Edit', edit_post_comment_path(comment) %> -->
           <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
