@@ -14,16 +14,14 @@
   <!-- Trash (<%= current_user.mailbox.trash.count %>) -->
 </div>
 <hr />
-<div class="message">
+<div class="messagetwo">
   Total: (<%= @conversations.count %>)
 </div>
 <% @conversations.each do |conversation| %>
-  <div class="message">
     <% if conversation.is_unread?(current_user) %>
       <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong>
     <% else %>
       <%= link_to conversation.subject, conversation_path(conversation) %>
+      <%= link_to 'Destroy', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-    <%= link_to 'Destroy', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
 <%end%>
