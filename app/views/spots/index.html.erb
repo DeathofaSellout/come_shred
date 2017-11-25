@@ -30,10 +30,10 @@
         <td><%= spot.features %></td>
         <td><%= spot.comments %></td>
         <%= render :partial => "spots/edit", :locals => {:spot_id => spot.id }%>
-        <td><a class="waves-effect waves-light btn modal-trigger dude" href="#modal_edit_spot_<%= spot.id %>">Edit</a></td>
-        <td><div class="profilethree">
-        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-        </div></td>
+        <td><a class="waves-effect waves-light btn modal-trigger dudetwo" href="#modal_edit_spot_<%= spot.id %>">Edit</a></td>
+        <!-- <div class="profilethree"> -->
+        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?'}, class: "waves-effect waves-light btn modal-trigger dudetwo" %></td>
+        </div>
       <% end %>
     </tbody>
   </table>

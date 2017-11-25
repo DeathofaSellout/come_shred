@@ -18,10 +18,12 @@
   Total: (<%= @conversations.count %>)
 </div>
 <% @conversations.each do |conversation| %>
+<div class="messages">
     <% if conversation.is_unread?(current_user) %>
       <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong>
     <% else %>
       <%= link_to conversation.subject, conversation_path(conversation) %>
-      <%= link_to 'Destroy', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+      <%= link_to 'Delete Message', conversation_path(conversation), method: :delete, data: { confirm: 'Are you sure?' } , class: "messagedelete"%>
     <% end %>
 <%end%>
